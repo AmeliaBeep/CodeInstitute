@@ -184,6 +184,20 @@ main {
     color: #fafafafa
 }
 
+/* Gallery page */
+#photos img {
+    width: 100%;
+    /* pushes alt text inside img elements down so they're visible */
+    line-height: 1em;
+}
+
+#photos {
+    /* removes white space between img elements which is present by default 
+    due to img being an inline element and therefore treated like text
+    so they have an automatic line height added to space text lines*/
+    line-height: 0;
+}
+
 /* Footer */
 #social-networks {
     text-align: center;
@@ -199,6 +213,13 @@ main {
     color: #3a3a3a;
 }
 
+/* Media query: large or landscape phones (576px and up) */
+@media screen and (wid-width: 576px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+} 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
@@ -259,12 +280,21 @@ main {
         align-self: flex-end;
     }
 
+    /* Gallery */
+    #photos {
+        column-count: 3;
+    }
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
+    }
+
+    /* Gallery */
+    #photos {
+        column-count: 4;
     }
 }
 
